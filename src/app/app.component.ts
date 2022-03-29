@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'demo';
+  constructor(public router: Router) {}
+  public isMenuCollapsed: boolean = false;
+
+  trackByFn(index: number, item: any) {
+    return index;
+  }
+
+  logout() {
+    localStorage.removeItem('user');
+    this.router.navigateByUrl('/signup');
+  }
 }
-// 623fc2f087ce6b490b3189ca

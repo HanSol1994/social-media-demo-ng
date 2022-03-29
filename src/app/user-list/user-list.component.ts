@@ -19,8 +19,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  showUserPosts(id: string) {
-    // console.log(id);
-    this.router.navigateByUrl('/post-list', { state: { userId: id } });
+  openUserDetails(id: string) {
+    this.router.navigateByUrl('/user', { state: { userId: id } });
   }
 }

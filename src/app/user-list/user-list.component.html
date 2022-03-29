@@ -1,4 +1,4 @@
 <p>user-list works!</p>
 <ul>
-    <li *ngFor="let user of userList?.data" (click)="showUserPosts(user.id)">{{ user.firstName }}</li>
+    <li *ngFor="let user of userList?.data" (click)="openUserDetails(user.id)">{{ user.firstName }}</li>
 </ul>

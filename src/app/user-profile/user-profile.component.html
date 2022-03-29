@@ -1,0 +1,41 @@
+<div class="custom-container">
+    <form action="">
+
+        <img class="image-preview" [src]="user.picture" alt="">
+        <div class="form-group">
+            <label for="gender">Title</label>
+            <select class="form-control" id="title" [(ngModel)]="user.title" name="title">
+                <option>mr</option>
+                <option>ms</option>
+                <option>mrs</option>
+                <option>miss</option>
+                <option>dr</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fname">First Name</label>
+            <input type="text" class="form-control" id="fname" required [(ngModel)]="user.firstName" name="firstName">
+            <label for="lname">Last Name</label>
+            <input type="text" class="form-control" id="lname" required [(ngModel)]="user.lastName" name="lastName">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone">
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" [(ngModel)]="user.gender" name="gender">
+                <option>male</option>
+                <option>female</option>
+                <option>other</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="fname">Profile Picture</label>
+            <input type="text" class="form-control" id="fname" [(ngModel)]="user.picture" name="picture">
+        </div>
+        <button class="btn btn-primary" (click)="updateUser()">Save</button>
+    </form>
+</div>

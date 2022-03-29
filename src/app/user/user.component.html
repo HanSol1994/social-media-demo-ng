@@ -1,0 +1,13 @@
+<div class="custom-container">
+    <div class="title-con">
+        <div class="flex-row">
+            <img [src]="user?.picture" class="image-preview" alt="">
+            <div class="flex-column">
+                <div class="title">{{user?.title}} {{ user?.firstName }} {{ user?.lastName }}</div>
+                <div class="title">{{user.email}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<h2 class="text-center">Posts</h2>
+<app-post-list [userId]="user?.id"></app-post-list>

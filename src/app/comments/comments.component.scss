@@ -1,0 +1,57 @@
+:host ::ng-deep {
+  .comment-con {
+    width: 500px;
+    .comment-list {
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+
+    .comment {
+      margin-top: 5px;
+      border: unset;
+    }
+
+    .title-con {
+      padding: 0;
+      flex-direction: row;
+      .user-img {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+    }
+
+    .footer-con {
+      font-size: 12px;
+      padding: 0;
+    }
+  }
+  .accordion {
+    .card {
+      background-color: transparent !important;
+      border: 0 !important;
+      .card-header,
+      .card-body {
+        display: flex !important;
+        border: 0 !important;
+        background-color: transparent !important;
+        padding: 0 !important;
+
+        button {
+          font-size: 12px !important;
+          color: grey !important;
+          margin: auto !important;
+          outline: none !important;
+          box-shadow: unset !important;
+        }
+      }
+    }
+  }
+
+  .add-comment {
+    border: 0;
+    outline: none;
+    background-color: transparent;
+    margin: 0 20px;
+    width: calc(100% - 40px);
+  }
+}

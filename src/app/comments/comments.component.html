@@ -1,0 +1,48 @@
+<div class="comment-con">
+    <div class="comment-list">
+
+        <div class="comment custom-container" *ngIf="firstComment">
+            <div class="title-con">
+                <img class="user-img" [src]="firstComment?.owner?.picture" alt="" placement="top"
+                    ngbTooltip="{{firstComment?.owner?.firstName}}" (click)="openUserDetails(firstComment?.owner?.id)">
+                <div class="flex-column">
+                    <div class="text-left date">
+                        {{firstComment?.publishDate | date:'medium'}}
+                    </div>
+                    <div class="footer-con">
+                        {{firstComment?.message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ngb-accordion #acc="ngbAccordion" activeIds="ngb-panel-0" *ngIf="commentList?.data?.length">
+            <ngb-panel title="Load More Comments">
+                <ng-template ngbPanelContent>
+                    <div class="flex-column">
+                        <div class="comment custom-container" *ngFor="let comment of commentList?.data; let i = index">
+                            <div class="title-con">
+                                <img class="user-img" [src]="comment?.owner?.picture" alt="" placement="top"
+                                    ngbTooltip="{{comment?.owner?.firstName}}"
+                                    (click)="openUserDetails(comment?.owner?.id)">
+                                <div class="flex-column">
+                                    <div class="text-left date">
+                                        {{comment?.publishDate | date:'medium'}}
+                                    </div>
+                                    <div class="footer-con">
+                                        {{comment?.message}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-panel>
+        </ngb-accordion>
+    </div>
+    <form #commentForm="ngForm" (ngSubmit)="addComment()">
+        <div class="form-group">
+            <input type="text" class="add-comment" id="message" placeholder="add comment" name="message"
+                [(ngModel)]="message">
+        </div>
+    </form>
+</div>

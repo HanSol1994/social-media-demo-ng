@@ -1,0 +1,3 @@
+<ngb-toast *ngFor="let toast of toasterService.toasts" [header]="toast.header" [autohide]="true"
+    [delay]="toast.delay || 5000" (hide)="toasterService.remove(toast)"
+    [ngClass]="{'success': toast.type === 'success', 'error': toast.type === 'error'}">{{toast.body}}</ngb-toast>

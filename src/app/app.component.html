@@ -1,5 +1,5 @@
 <app-toaster aria-live="polite" aria-atomic="true"></app-toaster>
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3" *ngIf="isUserLoggedIn()">
     <div class="container-fluid">
         <a class="navbar-brand" [routerLink]="'.'">Home</a>
 
@@ -9,20 +9,9 @@
 
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
             <ul class="navbar-nav">
-                <!-- <li ngbDropdown class="nav-item" [class.active]="router.url === '/post-list'">
-                    <a href (click)="false" class="nav-link" ngbDropdownToggle>Posts</a>
-                    <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="post-btn">
-                        <button ngbDropdownItem [routerLink]="'/post-list'"
-                            (click)="isMenuCollapsed = true">View</button>
-                        <button ngbDropdownItem (click)="isMenuCollapsed = true">Add +</button>
-                    </div>
-                </li> -->
                 <li class="nav-item" [class.active]="router.url === '/post-list'">
                     <a class="nav-link" [routerLink]="'/post-list'" (click)="isMenuCollapsed = true">Posts</a>
                 </li>
-                <!-- <li class="nav-item" [class.active]="router.url === '/user-list'">
-                    <a class="nav-link" [routerLink]="'/user-list'" (click)="isMenuCollapsed = true">Users</a>
-                </li> -->
                 <li class="nav-item" [class.active]="router.url === '/user-profile'">
                     <a class="nav-link" [routerLink]="'/user-profile'" (click)="isMenuCollapsed = true">Your profile</a>
                 </li>

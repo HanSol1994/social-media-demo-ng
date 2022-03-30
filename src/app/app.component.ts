@@ -13,6 +13,9 @@ export class AppComponent {
   trackByFn(index: number, item: any) {
     return index;
   }
+  isUserLoggedIn() {
+    return !!localStorage.getItem('user');
+  }
 
   logout() {
     localStorage.removeItem('user');

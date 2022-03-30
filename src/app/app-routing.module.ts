@@ -24,8 +24,16 @@ const routes: Routes = [
     component: UserProfileComponent,
     canActivate: [AlwaysAuthGuard],
   },
-  { path: 'signup', component: SignupComponent },
-  { path: '', redirectTo: '/signup', pathMatch: 'full' },
+  {
+    path: 'signup',
+    component: SignupComponent,
+    canActivate: [AlwaysAuthGuard],
+  },
+  {
+    path: '',
+    redirectTo: '/signup',
+    pathMatch: 'full',
+  },
   // { path: '**', component: PageNotFoundComponent },
 ];
 

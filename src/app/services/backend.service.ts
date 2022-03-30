@@ -38,7 +38,6 @@ export class BackEndService {
       .pipe(
         catchError((error) => {
           if (error.status === 400) {
-            debugger;
             this.toasterService.show(
               'Signup failed',
               error.error.data.email,
